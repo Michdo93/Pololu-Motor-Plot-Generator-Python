@@ -1,4 +1,4 @@
-# Polulu-Motor-Plot-Generator-Python
+# Pololu-Motor-Plot-Generator-Python
 
 The original Matlab Code you can find [here](https://de.mathworks.com/matlabcentral/fileexchange/54695-polulu-motor-plot-generator).
 
