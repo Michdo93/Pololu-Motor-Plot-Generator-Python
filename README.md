@@ -39,7 +39,7 @@ cd Pololu-Motor-Plot-Generator-Python
 python3 motorPlot.py
 ```
 
-After closing all three windows you can see the
+After closing all three windows you can see in the Command Line Interface the
 * Slope of TorqueVSCurrent
   * recprocal of it
 * maximum output of the mechanical power in watts
