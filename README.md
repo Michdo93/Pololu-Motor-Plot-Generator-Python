@@ -12,3 +12,5 @@ This script does the same. The input is similar to the link here (https://www.po
 The output curves and methodology is similar to the link here (https://www.pololu.com/product/2380/faqs)
 Re-written to include all units as per the feedback from users.
 Calculation guide is at http://www.micromo.com/technical-library/dc-motor-tutorials/motor-calculations
+
+![matlab_vs_matplotlib_comparison](https://github.com/Michdo93/Polulu-Motor-Plot-Generator-Python/blob/main/work.PNG?raw=true)
