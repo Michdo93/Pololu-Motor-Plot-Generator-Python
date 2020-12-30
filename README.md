@@ -44,5 +44,5 @@ After closing all three windows you can see in the Command Line Interface the
   * recprocal of it
 * maximum output of the mechanical power in watts
   * its Torque load in oz-in
-  * it current in mA
+  * its current in mA
 * Resistance of the motor in ohm
