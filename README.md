@@ -12,7 +12,7 @@ Calculation guide is at http://www.micromo.com/technical-library/dc-motor-tutori
 
 ## MATLAB vs. Python (matplotlib + numpy)
 
-On the left side you can see the MATLAB code in action and on the right side the Python Code. The MATLAB functions The MATLAB code is commented out in the Python code, so you can learn to translate MATLAB codes into Python. Also helpful are the NumPy for Matlab users guides from [Numpy](https://numpy.org/doc/stable/user/numpy-for-matlab-users.html) and [mathesaurus](http://mathesaurus.sourceforge.net/matlab-numpy.html).
+On the left side you can see the MATLAB code in action and on the right side the Python Code. The MATLAB code is commented out in the Python code, so you can learn to translate MATLAB codes into Python. Also helpful are the NumPy for Matlab users guides from [Numpy](https://numpy.org/doc/stable/user/numpy-for-matlab-users.html) and [mathesaurus](http://mathesaurus.sourceforge.net/matlab-numpy.html).
 
 ![matlab_vs_matplotlib_comparison](https://github.com/Michdo93/Polulu-Motor-Plot-Generator-Python/blob/main/work.PNG?raw=true)
 
