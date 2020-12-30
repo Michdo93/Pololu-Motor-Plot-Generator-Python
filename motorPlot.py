@@ -7,11 +7,26 @@ import matplotlib.pyplot as plt
 discreteBins = 500  #We will use this number of bins for plotting and calculating all functions such as Torque, speed etc.
 #Input part of the main function
 
-StallTorque = 17    # Please enter the stall torque in oz-inch [17]
-StallCurrent = 700  # Please enter the stall current in mA [700]
-RatedVoltage = 6    # Please enter the rated voltage in Volts [6]
-NoLoadCurrent = 40  # Please enter the free run currennt in mA [40]
-NoLoadSpeed = 290   # Please enter the free run speed in RPM [290]
+print("Please enter the stall torque in oz-inch [17]")
+StallTorque = input()
+
+print("Please enter the stall current in mA [700]")
+StallCurrent = input()
+
+print("Please enter the rated voltage in Volts [6]")
+RatedVoltage = input()
+
+print("Please enter the free run currennt in mA [40]")
+NoLoadCurrent = input()
+
+print("Please enter the free run speed in RPM [290]")
+NoLoadSpeed = input()
+
+# StallTorque = input('Please enter the stall torque in oz-inch [17]: ');
+# StallCurrent = input('Please enter the stall current in mA [700]: ');
+# RatedVoltage = input('Please enter the rated voltage in Volts [6]: ');
+# NoLoadCurrent = input('Please enter the free run currennt in mA [40]: ');
+# NoLoadSpeed = input('Please enter the free run speed in RPM [290]: ');
 
 #Some basic input error checking is here.
 if not isinstance(StallTorque, (int, float)) or StallTorque is None:
@@ -35,10 +50,10 @@ if not isinstance(NoLoadSpeed, (int, float)) or NoLoadSpeed is None:
     print('Using default value for NoLoadSpeed')
 
 #Here we calculate basic stuff to get all the variables and outputs.
-#Resistance = RatedVoltage / (StallCurrent/1000)
+Resistance = RatedVoltage / (StallCurrent/1000)
 
 #Torque line
-TorqueLine = np.arange(0, StallTorque, (StallTorque/discreteBins))
+TorqueLine = np.arange(0-(StallTorque/discreteBins), StallTorque, (StallTorque/discreteBins))
 # TorqueLine = 0:(StallTorque/discreteBins):StallTorque
 
 #Current Line
@@ -52,15 +67,9 @@ SpeedLine = np.arange(NoLoadSpeed, 0, ((0-NoLoadSpeed)/discreteBins))
 # Torque Constant in Torque per current is
 SlopeOfTorqueVsCurrent = (StallCurrent - NoLoadCurrent) / (StallTorque)
 
-print(TorqueLine.shape)
-print(CurrentLine.shape)
-print(SpeedLine.shape)
-
-
 #Output Mechanical Power in watts is Torque * Speed * 0.00074 watts
 OutputPower = 0.00074 * TorqueLine * SpeedLine
-#OutputPower = TorqueLine * SpeedLine
-# OutputPower = np.matmul(0.00074, (TorqueLine * SpeedLine))
+# No @ because it is different between Matlab and matplotlib
 # OutputPower = 0.00074 * TorqueLine .* SpeedLine
 
 #Input Electrical Power to the motor is Voltage * Current
@@ -134,8 +143,8 @@ plt.show()
 print('Slope of TorqueVsCurrent is %s. The recprocal is %s' % (SlopeOfTorqueVsCurrent, (1/SlopeOfTorqueVsCurrent)))
 
 #Max Output Power is at
-V,I = max(OutputPower)
+V,I = OutputPower.max(0),OutputPower.argmax(0)
 # [V,I] = max(OutputPower)
 
-print('Maximum output mechanical power is %s(watts).\nThis happens at the Torque load of %s(oz-in), with Current %s(mA)' % (OutputPower(I), TorqueLine(I), CurrentLine(I)))
+print('Maximum output mechanical power is %s(watts).\nThis happens at the Torque load of %s(oz-in), with Current %s(mA)' % (OutputPower[I], TorqueLine[I], CurrentLine[I]))
 print('Resistance of the motor is %s (ohms)' % Resistance)
