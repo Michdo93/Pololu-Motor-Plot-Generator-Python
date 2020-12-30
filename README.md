@@ -45,4 +45,4 @@ After closing all three windows you can see the
 * maximum output of the mechanical power in watts
   * its Torque load in oz-in
   * it current in mA
-* Resistance of the motr in ohm
+* Resistance of the motor in ohm
