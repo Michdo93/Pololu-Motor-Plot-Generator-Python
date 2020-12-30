@@ -2,9 +2,6 @@
 
 The original Matlab Code you can find [here](https://de.mathworks.com/matlabcentral/fileexchange/54695-polulu-motor-plot-generator).
 
-It is still in process and not working. The problems are described on stackoverflow:
-https://stackoverflow.com/questions/65483128/converting-the-polulu-motor-plot-generator-from-matlab-to-matplotlib
-
 Pololu sells dc motors used in differential drive robots. Plot useful info using their datasheet
 
 The website of Pololu or several (small) DC motor manufacturers generally only supply very few parameters such as stall torque, stall current, rated voltage etc. To get more information about the motor behaviour, these parameter values can be combined and analyzed.
